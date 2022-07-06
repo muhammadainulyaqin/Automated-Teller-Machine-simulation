@@ -1,0 +1,109 @@
+#include <iostream>
+#include <cmath>
+#include <stdlib.h>
+
+using namespace std;
+//saldo awal
+int saldo=500000;
+
+// variable untuk menampung jumlah tarik tunai
+int jumlah_tarik_tunai;
+
+void Dashboard(){
+    system("cls");
+    cout <<"==========================================================="<<endl;
+    cout <<"                      ATM BRIU                             "<<endl;
+    cout <<"        SELAMAT DATANG DI ATM BRIU PAITON                  "<<endl;
+    cout <<"==========================================================="<<endl;
+    cout <<"   MENU :"<<endl;
+    cout <<"   1. Data Nasabah      3.Tarik Tunai"<<endl;
+    cout <<"   2. Info Saldo        4.Info Deposit "<<endl<<endl;
+    
+}
+
+void Data_nasabah(){
+    system("cls");
+    cout <<"==========================================================="<<endl;
+    cout <<"                      ATM BRIU                             "<<endl;
+    cout <<"        SELAMAT DATANG DI ATM BRIU PAITON                  "<<endl;
+    cout <<"==========================================================="<<endl;
+    cout <<"   Data Nasabah :"<<endl;
+    cout <<"   Nama           : M. Fani Nur Umri "<<endl;
+    cout <<"   No Hp          : 08273612621 "<<endl;
+    cout <<"   Jenis Kelamain : Laki-laki "<<endl;
+    cout <<"   No. Rekening   : 76261521 "<<endl;
+    cout <<"   Alamat         : Paiton - Probolinggo"<<endl<<endl;
+}
+
+void info_saldo(){
+    system("cls");
+    cout <<"==========================================================="<<endl;
+    cout <<"                      ATM BRIU                             "<<endl;
+    cout <<"        SELAMAT DATANG DI ATM BRIU PAITON                  "<<endl;
+    cout <<"==========================================================="<<endl;
+    cout <<"   Info Saldo :"<<endl;
+    cout <<"   Nama           : Fani "<<endl;
+    cout <<"   Saldo          : "<<saldo<<endl<<endl;
+}
+
+void Tarik_tunai(){
+    system("cls");
+    cout <<"==========================================================="<<endl;
+    cout <<"                      ATM BRIU                             "<<endl;
+    cout <<"        SELAMAT DATANG DI ATM BRIU PAITON                  "<<endl;
+    cout <<"==========================================================="<<endl;
+    cout <<"   Tarik Tunai :"<<endl;
+    cout <<"   Nama                    : Fani "<<endl;
+    cout <<"   Masukkan jumlah nominal : Rp.";
+    
+    //inputan jumlah tarik tunai
+    cin  >>jumlah_tarik_tunai;
+    
+    //menghitung sisa saldo
+    int sisa_saldo=saldo - jumlah_tarik_tunai;
+    
+    //update sisa saldo
+    saldo=sisa_saldo;
+    
+    cout <<"Sisa saldo anda adalah Rp."<<saldo <<endl<<endl<<endl;
+
+}
+
+void Deposit(){
+    system("cls");
+    cout <<"==========================================================="<<endl;
+    cout <<"                      ATM BRIU                             "<<endl;
+    cout <<"        SELAMAT DATANG DI ATM BRIU PAITON                  "<<endl;
+    cout <<"==========================================================="<<endl;
+    cout <<"   Info Saldo :"<<endl;
+    cout <<"   Nama             : Fani "<<endl;
+    cout <<"   Deposit          : Rp. 150.000.000,-"<<endl<<endl<<endl;;
+}
+
+int main(){
+    
+    int menu;
+    char rpt;
+    system("clear");
+    do{
+    
+    //panggil fungsi dashboard
+    Dashboard();
+    cout <<"Silahkan pilih menu?";
+    cin >>menu;
+    
+    if(menu==1){
+        Data_nasabah();
+    }else if(menu==2){
+        info_saldo();
+    }else if(menu==3){
+        Tarik_tunai();
+    }else if(menu==4){
+        Deposit();
+    }
+    
+    cout << "Anda akan melanjutkan Transaksi? ketik Y untuk melanjutkan atau N untuk exit. : ";
+    cin >>rpt;
+   }while(rpt=='Y' or rpt=='y');
+    
+}
